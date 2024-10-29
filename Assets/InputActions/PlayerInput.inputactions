@@ -70,7 +70,7 @@
                 {
                     "name": "left",
                     "id": "2a7c5444-b812-4e6b-8c7e-56fbbaac0fb1",
-                    "path": "<NimbusGamepadHid>/buttonSouth",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
