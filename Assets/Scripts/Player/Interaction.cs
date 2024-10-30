@@ -9,11 +9,11 @@ public class Interaction : MonoBehaviour
 	public float checkRate = 0.05f;
 	private float lastCheckTime;
 	public float maxCheckDistance;
-	public LayerMask LayerMask;
+	public LayerMask layerMask;
 	public GameObject curInteractGameObject;
 	private IInteractable curInteractable;
 
-	public TextMeshProUGUI promptText;
+	public TextMeshProUGUI PromptText;
 	private Camera camera;
 	void Start()
 	{
@@ -29,7 +29,8 @@ public class Interaction : MonoBehaviour
 
 			Ray ray = camera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
 			RaycastHit hit;
-			if (Physics.Raycast(ray, out hit, maxCheckDistance, LayerMask))
+
+			if (Physics.Raycast(ray, out hit, maxCheckDistance, layerMask))
 			{
 				if (hit.collider.gameObject != curInteractGameObject)
 				{
@@ -42,15 +43,14 @@ public class Interaction : MonoBehaviour
 			{
 				curInteractGameObject = null;
 				curInteractable = null;
-				promptText.gameObject.SetActive(false);
+				PromptText.gameObject.SetActive(false);
 			}
 		}
-
 	}
 	private void SetPromptText()
 	{
-		promptText.gameObject.SetActive(true);
-		promptText.text = curInteractable.GetInteractPrompt();
+		PromptText.gameObject.SetActive(true);
+		PromptText.text = curInteractable.GetInteractPrompt();
 	}
 	public void OnInteractInput(InputAction.CallbackContext context)
 	{
@@ -59,7 +59,7 @@ public class Interaction : MonoBehaviour
 			curInteractable.OnInteract();
 			curInteractGameObject = null;
 			curInteractable = null;
-			promptText.gameObject.SetActive(false);
+			PromptText.gameObject.SetActive(false);
 		}
 	}
 }
