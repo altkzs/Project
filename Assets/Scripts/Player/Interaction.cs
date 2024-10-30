@@ -1,15 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public interface IInteractable
+{
+	public string GetInteractPrompt();
+	public void OnInteract();
+}
 public class Interaction : MonoBehaviour
 {
 	public float checkRate = 0.05f;
 	private float lastCheckTime;
 	public float maxCheckDistance;
 	public LayerMask layerMask;
+
 	public GameObject curInteractGameObject;
 	private IInteractable curInteractable;
 
@@ -52,6 +56,7 @@ public class Interaction : MonoBehaviour
 		PromptText.gameObject.SetActive(true);
 		PromptText.text = curInteractable.GetInteractPrompt();
 	}
+
 	public void OnInteractInput(InputAction.CallbackContext context)
 	{
 		if (context.phase == InputActionPhase.Started && curInteractable != null)
