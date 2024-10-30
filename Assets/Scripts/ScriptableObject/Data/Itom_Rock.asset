@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c222c3d81dc4b5a994bcde5401bbf3, type: 3}
   m_Name: Itom_Rock
   m_EditorClassIdentifier: 
-  displayName: 
-  description: 
+  displayName: "\uB3CC"
+  description: "\uB9D0\uADF8\uB300\uB85C \uB3CC"
   type: 0
-  icon: {fileID: 0}
-  dropPrefab: {fileID: 0}
-  canStack: 0
-  maxStackAmount: 0
+  icon: {fileID: 21300000, guid: e61976ceaf6919c47853f5a7ea09288b, type: 3}
+  dropPrefab: {fileID: 28864192599611045, guid: 3009ad89fa2bb465b8a0f9859fd799de, type: 3}
+  canStack: 1
+  maxStackAmount: 12
   consumables: []
